@@ -1,7 +1,6 @@
 # PYTHON
  🚀 PyWebCircuit - The Ultimate Python Repository 🐍  
  Welcome to PyWebCircuit, your go-to Python repository for everything from beginner-friendly scripts to advanced automation, web development, AI, and IoT projects! 🚀  
- 
  🔥 What’s Inside? 
  ✅ Beginner to Advanced Python Programs 📝 
  ✅ Web Development with Flask & Django 🌐 
