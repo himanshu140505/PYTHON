@@ -7,6 +7,8 @@ def calicon():
 
 def calculator():
     while True:
+        clearscreen()
+        calicon()
         expression = input("Enter an expression: ")
         try:
             print("----------------------------------------")
