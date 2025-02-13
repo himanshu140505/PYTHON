@@ -22,7 +22,7 @@ def quiz_app():
     user_choice_category = category[(int(input("Enter the category number: ")))-1]
     print(user_choice_category)
     api_url = f'https://api.api-ninjas.com/v1/trivia?category={user_choice_category}'
-    response = requests.get(api_url, headers={'X-Api-Key': 'EnKiBn6C4joXGXz59AMy7Q==nPXSmx6dtLvDmlZU'})
+    response = requests.get(api_url, headers={'X-Api-Key': 'PASTE YOUR TOKEN HERE'})
     print(response.json())
     print(response.status_code)
     print(response.text)
