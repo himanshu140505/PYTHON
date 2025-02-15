@@ -1,4 +1,8 @@
 Tkinter is a standard GUI library for Python which provides a fast adn easy way to create desktop applications.
+                            OR
+Tkinter is a built-in library in Python for creating graphical user interface(GUIs). You can use it to design desktop applications with familier elements like buttons, windows, menus, and more. It also allows you to build interactive programs that user can navgate visually. 
+
+There are many alternatives of Tkinter namely PyQt, Kivy, wxPython and GTK+ 
 
 root = tk.Tk(screenName = None, baseName = None, className = 'Tk', useTk=1)
 mainloop()
@@ -190,7 +194,71 @@ TKINTER GEOMETRY MANAGERS :
     3. place() method :
         -> organises the widgets y placing them in specifi positions directly by the programmer
         -> widgets are placed at specific x and y coordinates
-        ->
+        -> sizes and positions can be specified in absolute or relative terms
+        -> Codes ::
+                import tkinter as tk
+
+                root = tk.Tk()
+                root.title("Place Example")
+
+                # Create a label
+                label = tk.Label(root, text="Label")
+
+                # Place the label at specific coordinates
+                label.place(x=50, y=50)
+
+                root.mainloop()
+
+EVENT HANDLING IN TKINTER :
+-> Events are actions that occur when a user interacts with the GUI, such as pressing a key clicking a mouse button or resising a window
+-> allows us to define how our application should respond to thee interactions
+    Events and Bindings :
+        -> widget.bind(event, handler)
+        -> Events in Tkinters are captured and managed using a mechanism called findings
+        -> A binding links an event to a callback function (also known as event handler) that is called when the event occurs
+
+        -> widget : The Tkinter widget you want to bind the event to
+        -> event : A string that specifies the type of event
+        -> handler : The callback function that will be executed when the event occurs
+
+KEY AND NOUSE EVENTS :
+-> Key events are triggered when a user presses a key on the keyboard
+-> Similarlly mouse events are triggered by mouse actions such as clicking or moving the mouse
+-> Code ::
+        import tkinter as tk
+
+        def on_key_press(event):
+            print(f"Key pressed: {event.keysym}")
+
+        def on_left_click(event):
+            print(f"Left click at ({event.x}, {event.y})")
+
+        def on_right_click(event):
+            print(f"Right click at ({event.x}, {event.y})")
+
+        def on_mouse_motion(event):
+            print(f"Mouse moved to ({event.x}, {event.y})")
+
+        root = tk.Tk()
+        root.title("Advanced Event Handling Example")
+
+        root.bind("<KeyPress>", on_key_press)
+        root.bind("<Button-1>", on_left_click)
+        root.bind("<Button-3>", on_right_click)
+        root.bind("<Motion>", on_mouse_motion)
+
+        root.mainloop()
+
+EVENT OBJECT :
+-> The event object is passed to the callback function when an event occurs
+-> It contains useful information about the event, such as :
+    1. event.keysym : The key symbol (eg.. 'a', 'Enter')
+    2. event.x and event.y : The x and y coordinates of the mouse event
+    3. event.widget : The widget that triggered the event
+
+
+
+
 
 
 
