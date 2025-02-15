@@ -119,6 +119,80 @@ CANVAS : w = Canvas(master, option = value)
 PANNEDWINDOW : w = PannedWindow(master, optio = value)
 -> used to handle numer of panes arranged in it
 
+COLOR OPTION ;
+-> Code ::
+            import tkinter as tk
+            root = tk.Tk()
+            root.title("Color Options in Tkinter")
+
+            # Create a button with active background and foreground colors
+            button = tk.Button(root, text="Click Me", activebackground="blue", activeforeground="white")
+            button.pack()
+
+            # Create a label with background and foreground colors
+            label = tk.Label(root, text="Hello, Tkinter!", bg="lightgray", fg="black")
+            label.pack()
+
+            # Create an Entry widget with selection colors
+            entry = tk.Entry(root, selectbackground="lightblue", selectforeground="black")
+            entry.pack()
+
+            root.mainloop()
+
+
+TKINTER GEOMETRY MANAGERS : 
+-> offers access to the geometric configuration of the widgets which can organise the widgets in the parent windows
+-> Three geometry manager classes class :
+    1. pack() method 
+       -> organises the widgets in block s before placing in the parent widget
+       -> can be packed from the top, bootom, left or right
+       -> can widgets to fill the available space o place them in a fixed size
+       -> Code ::
+                import tkinter as tk
+
+                root = tk.Tk()
+                root.title("Pack Example")
+
+                # Create three buttons
+                button1 = tk.Button(root, text="Button 1")
+                button2 = tk.Button(root, text="Button 2")
+                button3 = tk.Button(root, text="Button 3")
+
+                # Pack the buttons vertically
+                button1.pack()
+                button2.pack()
+                button3.pack()
+
+                root.mainloop()
+
+    2. grid() method :
+       -> organizes the widgets in grid (table-like structure) before placing in the parent widget
+       -> each widget is assigned a row and column
+       -> can span multiple rows or columns using rowspan and columnspan
+       -> Code ::
+                import tkinter as tk
+
+                root = tk.Tk()
+                root.title("Grid Example")
+
+                # Create three labels
+                label1 = tk.Label(root, text="Label 1")
+                label2 = tk.Label(root, text="Label 2")
+                label3 = tk.Label(root, text="Label 3")
+
+                # Grid the labels in a 2x2 grid
+                label1.grid(row=0, column=0)
+                label2.grid(row=0, column=1)
+                label3.grid(row=1, column=0, columnspan=2)
+
+                root.mainloop()
+
+    3. place() method :
+        -> organises the widgets y placing them in specifi positions directly by the programmer
+        -> widgets are placed at specific x and y coordinates
+        ->
+
+
 
 
 # options include -> text, font, background, foreground, etc
