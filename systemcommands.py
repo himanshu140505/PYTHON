@@ -8,8 +8,15 @@ def clearscreen():
 def exitfn():
     os._exit(0)
 
-def sleepfn():
-    time.sleep(5)
+def sleepfn(n):
+    time.sleep(n)
+
+
+def typing(text):
+    for character in text:
+      sys.stdout.write(character)
+      sys.stdout.flush()
+      time.sleep(0.009)
 
 def default():
     print("Under Development....")
