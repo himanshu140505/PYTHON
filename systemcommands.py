@@ -72,7 +72,8 @@ def default():
 
 
 
-
+def owner_txt():
+    return("||                     ~ BY PyWebCircuit      ||")
 
 def owner():
     print("||                     ~ BY PyWebCircuit      ||")
