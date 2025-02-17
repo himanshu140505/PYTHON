@@ -1,6 +1,7 @@
 import os
 import sys
 import time
+import tkinter as tk
 
 def clearscreen():
     os.system('cls')
@@ -10,7 +11,6 @@ def exitfn():
 
 def sleepfn(n):
     time.sleep(n)
-
 
 def typing(text):
     for character in text:
@@ -24,6 +24,7 @@ def default():
 
 
 
+            
 
 
 
@@ -73,7 +74,11 @@ def default():
 
 
 def owner_txt():
-    return("||                     ~ BY PyWebCircuit      ||")
+    return("||                       ~ BY Devil_HacksIt   ||")
 
 def owner():
-    print("||                     ~ BY PyWebCircuit      ||")
+    print("||                       ~ BY Devil_HacksIt   ||")
+
+def owner_text():
+    return("DEVIL IS HERE TO HELP YOU")
+    

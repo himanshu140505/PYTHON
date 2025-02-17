@@ -261,6 +261,12 @@ EVENT OBJECT :
 
 
 
+<!-- 
+from tkinter_app import TkinterApp
 
+app = TkinterApp('Another App')
+app.insert_text("This is a test message.")
+app.run() 
+-->
 
 # options include -> text, font, background, foreground, etc
