@@ -121,7 +121,7 @@ CANVAS : w = Canvas(master, option = value)
 -> used to draw pictures and other complex layout like graphics text and widgets
 
 PANNEDWINDOW : w = PannedWindow(master, optio = value)
--> used to handle numer of panes arranged in it
+-> used to handle number of panes arranged in it
 
 COLOR OPTION ;
 -> Code ::
