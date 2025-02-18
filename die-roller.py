@@ -14,13 +14,15 @@ def nggicon(app):
 def getval(app):
     app.insert_text("||Enter the number of die you want to roll:   ||")
     app.insert_text("================================================")
-    input_box = app.create_box(width=5, bd=10, relief="groove")
+    input_box = app.create_box(validate="key", validatecommand=(app.root.register(app.validate_input), '%P'),width=5, bd=10, relief="groove")
     input_box.bind('<Return>', lambda event: app.root.quit())
     app.root.mainloop()
     try:
         return int(input_box.get())
     except ValueError:
         app.insert_text("Invalid input. Please enter a valid number.")
+        app.clear_text()
+        nggicon(app)
         return getval(app)
 
 def die_roller(app):

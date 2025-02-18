@@ -14,7 +14,7 @@ class TkinterApp:
         self.text_widget = tk.Text(self.root, height=10, width=50)
         self.text_widget.pack(pady=10)
 
-        self.create_box()
+        # self.create_box(validate="key", validatecommand=(self.root.register(self.validate_input), '%P'))
 
     def create_box(self, **kwargs):
         self.input_box = tk.Entry(self.root, **kwargs)
@@ -37,6 +37,13 @@ class TkinterApp:
         print(f"Entry content: {self.input_box.get()}")
         self.input_box.delete(0, tk.END)
     
+    def validate_input(self, new_value):
+        # Add your validation logic here
+        if new_value.isdigit() or new_value == "":
+            return True
+        else:
+            return False
+
     def clear_text(self, input_box=None):
         self.text_widget.delete('1.0', tk.END)
         self.input_box.destroy()
