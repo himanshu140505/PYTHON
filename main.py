@@ -38,10 +38,14 @@ class AdvancedTkinterApp:
     # 🔹 FUNCTION: OPEN NEW FILE WINDOW
     # ===========================
     def new_file(self):
-        new_window = tk.Toplevel(self.root)  # Create a new window
-        new_window.title("New Window")
-        new_window.geometry("400x300")  # Set window size
-        tk.Label(new_window, text="This is a new window", font=("Arial", 14)).pack(pady=20)
+        # new_window = tk.Toplevel(self.root)  # Create a new window
+        root = tb.Window(themename='cosmo')    
+        new_win = AdvancedTkinterApp(root)
+        new_win.mainloop()
+
+        # new_window.title("New Window")
+        # new_window.geometry("400x300")  # Set window size
+        # tk.Label(new_window, text="This is a new window", font=("Arial", 14)).pack(pady=20)
 
 
     # ===========================
