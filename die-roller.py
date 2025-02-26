@@ -29,7 +29,7 @@ def die_roller(app):
     while die_roll_no != 0:    
         c = 1
         
-        die_random_list = []
+        die_random_list = []    
         for i in range(die_roll_no):
             die_random_list.append(random.randint(1, 6))
             
