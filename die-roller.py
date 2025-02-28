@@ -1,56 +1,43 @@
 import cv2
 import random
 from systemcommands import *
-from tkinter_app import TkinterApp
 
-owner_text = owner_txt()
+def nggicon():
+    print("================================================")
+    print("||                 DIE ROLLER                 ||")
+    owner()
+    print("================================================")
 
-def nggicon(app):
-    app.insert_text("================================================")
-    app.insert_text("||                 DIE ROLLER                 ||")
-    app.insert_text(f"{owner_text}")
-    app.insert_text("================================================")
+    
+def getval():
+    die_roll_no = int(input("Enter the nmber of times you want the die(s) to roll : "))
+    return(die_roll_no)
 
-def getval(app):
-    app.insert_text("||Enter the number of die you want to roll:   ||")
-    app.insert_text("================================================")
-    input_box = app.create_box(width=5, bd=2, relief="sunken")
-    input_box.bind('<Return>', lambda event: app.root.quit())
-    app.root.mainloop()
-    try:
-        return int(input_box.get())
-    except ValueError:
-        app.insert_text("Invalid input. Please enter a valid number.")
-        return getval(app)
 
-def die_roller(app):
-    nggicon(app)
-    die_roll_no = getval(app)
-    while die_roll_no != 0:    
+
+def die_roller():
+    nggicon()
+    die_roll_no = getval()
+
+    while (die_roll_no != 0):    
         c = 1
         
-        die_random_list = []    
-        for i in range(die_roll_no):
-            die_random_list.append(random.randint(1, 6))
+        die_random_list = []
+        for i in range(0,die_roll_no):
+            die_random_list.append(random.randint(1,6))
             
         for i in die_random_list:
-            img = cv2.imread(f'DIE-IMAGES/die-{i}.png')
-            if img is not None:
-                cv2.imshow(f"DIE ROLL {c}", img)
-                c += 1
-            else:
-                app.insert_text(f"Error: Could not load image DIE-IMAGES/die-{i}.png")
+            cv2.imshow(f"DIE ROLL {c}", cv2.imread(f'DIE-IMAGES/die-{i}.png'))
+            c=c+1
 
         cv2.waitKey(0)
         cv2.destroyAllWindows()
-        app.clear_text()
-        nggicon(app)
-        die_roll_no = getval(app)
 
-    app.clear_text()
+        clearscreen()
+        nggicon()
+        die_roll_no = getval()
+
+    clearscreen()
     exitfn()
 
-if __name__ == "__main__":
-    app = TkinterApp('DIE ROLLER')
-    die_roller(app)
-    app.run()
+die_roller()

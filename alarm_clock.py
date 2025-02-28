@@ -30,6 +30,6 @@ class ALARM_CLOCK:
 if __name__ == "__main__":
     app = TkinterApp('Alarm Clock')
     alarm_clock = ALARM_CLOCK(app)
-    app.create_box(40, 50, width=20, bd=2, relief="sunken")
+    app.create_box(width=20, bd=2, relief="sunken")
     app.input_box.bind('<Return>', lambda event: alarm_clock.set_alarm(app.input_box.get()))
     alarm_clock.start()
