@@ -6,7 +6,7 @@ class TkinterApp:
         self.root = tk.Tk()
         self.root.title(name)
         self.value = ""
-        self.owner_text = owner_txt()
+        self.owner_text = owner_text()
         
         self.label = tk.Label(self.root, text=f"{self.owner_text}")
         self.label.pack()

@@ -45,7 +45,7 @@ def rock_paper():
         print(f"| Your choice: {choices[user_choice-1]} || Computer choice: {choices[computer_choice-1]} |")
         print("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
 
-        sleepfn()
+        sleepfn(2)
 
 
 rock_paper()

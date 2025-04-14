@@ -49,6 +49,7 @@ class HangmanGame:
         self.update_display()
         self.app.run()
         self.app.insert_text("Welcome to Hangman!")
+
 if __name__ == "__main__":
     app = TkinterApp('Hangman Game')
     hangman_game = HangmanGame(app)
