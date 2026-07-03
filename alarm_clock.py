@@ -1,5 +1,4 @@
 import os
-import sys
 from datetime import datetime, timedelta
 from systemcommands import *
 from tkinter_app import TkinterApp
@@ -12,10 +11,12 @@ class ALARM_CLOCK:
         try:
             alarm_time = datetime.strptime(time_str, "%H:%M").time()
             current_time = datetime.now().time()
-            if alarm_time > current_time:
-                delta = datetime.combine(datetime.today(), alarm_time) - datetime.combine(datetime.today(), current_time)
-            else:
-                delta = datetime.combine(datetime.today() + timedelta(days=1), alarm_time) - datetime.combine(datetime.today(), current_time)
+            delta = (
+                datetime.combine(datetime.today(), alarm_time)
+                - datetime.combine(datetime.today(), current_time)
+            )
+            if delta.total_seconds() < 0:
+                delta += timedelta(days=1)
             self.app.root.after(int(delta.total_seconds() * 1000), self.trigger_alarm)
         except ValueError:
             self.app.insert_text("Invalid time format. Please use HH:MM.")

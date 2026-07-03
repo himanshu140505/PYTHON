@@ -1,4 +1,5 @@
 import random
+import tkinter as tk
 from tkinter import messagebox
 from tkinter_app import TkinterApp
 
@@ -48,7 +49,6 @@ class HangmanGame:
         self.app.input_box.bind("<Return>", self.guess_letter)
         self.update_display()
         self.app.run()
-        self.app.insert_text("Welcome to Hangman!")
 
 if __name__ == "__main__":
     app = TkinterApp('Hangman Game')
